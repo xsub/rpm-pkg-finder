@@ -5,8 +5,9 @@
 **Featuring:**
 * :muscle: KISS, primitive design
 * :gear: Actual functionality: CLI tool with local database
-* :file_folder: Uses `/etc/yum.repos.d/*.repo` files (for `rpm-pkg-db-builder.py`)
 * :snake: Python3, SQLite; DNF (for `rpm-pkg-db-builder.py`)
+* :file_folder: Uses `/etc/yum.repos.d/*.repo` files (for `rpm-pkg-db-builder.py`)
+
 
 #### Example (using):
 
