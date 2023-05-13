@@ -1,18 +1,12 @@
 # `rpm-pkg-finder`  :mag_right:
-## :snake: A Python tool to identify the parent repository for a known package (name).
-### :file_folder: Discover the source repository for RPM packages with ease. :sparkles:
+## A Python tool to identify the parent repository for a known package (name).
+### Discover the source repository for RPM packages with ease. :sparkles:
 
-Featuring:
+**Featuring:**
 * :muscle: KISS, primitive design
 * :gear: Actual functionality: CLI tool with local database
 * :file_folder: Uses /etc/yum.repos.d/*.repo files (for `rpm-pkg-db-builder.py`)
 * :snake: Python3, sqlite, dnf (for `rpm-pkg-db-builder.py`)
-
-Featuring:
-* KISS, primtive design
-* Actual functionality: CLI tool with local database
-* Uses /etc/yum.repos.d/*.repo files (for rpm-pkg-db-builder.py)
-* Python3, sqlite, dnf (for rpm-pkg-db-builder.py)
 
 #### Example (using):
 
@@ -85,4 +79,4 @@ user	1m28.366s
 sys	0m6.713s
 ```
 
-:snake:
+[Go AlmaLinux!](https://almalinux.org)
