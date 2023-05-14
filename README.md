@@ -53,45 +53,46 @@ Repository Name: appstream
 
 ```
 ➜  rpm-pkg-finder time ./rpm-pkg-db-builder.py
-repo id: 1/39 -- name: appstream
-repo id: 2/39 -- name: appstream-debug
-repo id: 3/39 -- name: appstream-source
-repo id: 4/39 -- name: baseos
-repo id: 5/39 -- name: baseos-debug
-repo id: 6/39 -- name: baseos-source
-repo id: 7/39 -- name: crb
-repo id: 8/39 -- name: crb-debug
-repo id: 9/39 -- name: crb-source
-repo id: 10/39 -- name: extras
-repo id: 11/39 -- name: extras-debug
-repo id: 12/39 -- name: extras-source
-repo id: 13/39 -- name: highavailability
-repo id: 14/39 -- name: highavailability-debug
-repo id: 15/39 -- name: highavailability-source
-repo id: 16/39 -- name: nfv
-repo id: 17/39 -- name: nfv-debug
-repo id: 18/39 -- name: nfv-source
-repo id: 19/39 -- name: plus
-repo id: 20/39 -- name: plus-debug
-repo id: 21/39 -- name: plus-source
-repo id: 22/39 -- name: resilientstorage
-repo id: 23/39 -- name: resilientstorage-debug
-repo id: 24/39 -- name: resilientstorage-source
-repo id: 25/39 -- name: rt
-repo id: 26/39 -- name: rt-debug
-repo id: 27/39 -- name: rt-source
-repo id: 28/39 -- name: sap
-repo id: 29/39 -- name: sap-debug
-repo id: 30/39 -- name: sap-source
-repo id: 31/39 -- name: saphana
-repo id: 32/39 -- name: saphana-debug
-repo id: 33/39 -- name: saphana-source
-repo id: 34/39 -- name: epel-testing
-repo id: 35/39 -- name: epel-testing-debuginfo
-repo id: 36/39 -- name: epel-testing-source
-repo id: 37/39 -- name: epel
-repo id: 38/39 -- name: epel-debuginfo
-repo id: 39/39 -- name: epel-source
+repo id: 1/39 | file: almalinux-appstream.repo | name: appstream ➡️ indexed 22014 packages.
+repo id: 2/39 | file: almalinux-appstream.repo | name: appstream-debug ➡️  indexed 26759 packages.
+repo id: 3/39 | file: almalinux-appstream.repo | name: appstream-source ➡️  indexed 23700 packages.
+repo id: 4/39 | file: almalinux-baseos.repo | name: baseos ➡️  indexed 22014 packages.
+repo id: 5/39 | file: almalinux-baseos.repo | name: baseos-debug ➡️  indexed 23862 packages.
+repo id: 6/39 | file: almalinux-baseos.repo | name: baseos-source ➡️  indexed 22429 packages.
+repo id: 7/39 | file: almalinux-crb.repo | name: crb ➡️  indexed 23632 packages.
+repo id: 8/39 | file: almalinux-crb.repo | name: crb-debug ➡️  indexed 22519 packages.
+repo id: 9/39 | file: almalinux-crb.repo | name: crb-source ➡️  indexed 22323 packages.
+repo id: 10/39 | file: almalinux-extras.repo | name: extras ➡️  indexed 22014 packages.
+repo id: 11/39 | file: almalinux-extras.repo | name: extras-debug ➡️  indexed 22014 packages.
+repo id: 12/39 | file: almalinux-extras.repo | name: extras-source ➡️  indexed 22032 packages.
+repo id: 13/39 | file: almalinux-highavailability.repo | name: highavailability ➡️  indexed 22089 packages.
+repo id: 14/39 | file: almalinux-highavailability.repo | name: highavailability-debug ➡️  indexed 22064 packages.
+repo id: 15/39 | file: almalinux-highavailability.repo | name: highavailability-source ➡️  indexed 22023 packages.
+repo id: 16/39 | file: almalinux-nfv.repo | name: nfv ➡️  indexed 22035 packages.
+repo id: 17/39 | file: almalinux-nfv.repo | name: nfv-debug ➡️  indexed 22019 packages.
+repo id: 18/39 | file: almalinux-nfv.repo | name: nfv-source ➡️  indexed 22018 packages.
+repo id: 19/39 | file: almalinux-plus.repo | name: plus ➡️  indexed 22015 packages.
+repo id: 20/39 | file: almalinux-plus.repo | name: plus-debug ➡️  indexed 22017 packages.
+repo id: 21/39 | file: almalinux-plus.repo | name: plus-source ➡️  indexed 22015 packages.
+repo id: 22/39 | file: almalinux-resilientstorage.repo | name: resilientstorage ➡️  indexed 22092 packages.
+repo id: 23/39 | file: almalinux-resilientstorage.repo | name: resilientstorage-debug ➡️  indexed 22066 packages.
+repo id: 24/39 | file: almalinux-resilientstorage.repo | name: resilientstorage-source ➡️  indexed 22024 packages.
+repo id: 25/39 | file: almalinux-rt.repo | name: rt ➡️  indexed 22030 packages.
+repo id: 26/39 | file: almalinux-rt.repo | name: rt-debug ➡️  indexed 22019 packages.
+repo id: 27/39 | file: almalinux-rt.repo | name: rt-source ➡️  indexed 22018 packages.
+repo id: 28/39 | file: almalinux-sap.repo | name: sap ➡️  indexed 22023 packages.
+repo id: 29/39 | file: almalinux-sap.repo | name: sap-debug ➡️  indexed 22024 packages.
+repo id: 30/39 | file: almalinux-sap.repo | name: sap-source ➡️  indexed 22019 packages.
+repo id: 31/39 | file: almalinux-saphana.repo | name: saphana ➡️  indexed 22022 packages.
+repo id: 32/39 | file: almalinux-saphana.repo | name: saphana-debug ➡️  indexed 22022 packages.
+repo id: 33/39 | file: almalinux-saphana.repo | name: saphana-source ➡️  indexed 22019 packages.
+repo id: 34/39 | file: epel-testing.repo | name: epel-testing ➡️  indexed 22123 packages.
+repo id: 35/39 | file: epel-testing.repo | name: epel-testing-debuginfo ➡️  indexed 23142 packages.
+repo id: 36/39 | file: epel-testing.repo | name: epel-testing-source ➡️  indexed 22486 packages.
+repo id: 37/39 | file: epel.repo | name: epel ➡️  indexed 22014 packages.
+repo id: 38/39 | file: epel.repo | name: epel-debuginfo ➡️  indexed 28296 packages.
+repo id: 39/39 | file: epel.repo | name: epel-source ➡️  indexed 27548 packages.
+Total packages: 883594.
 
 real	1m36.491s
 user	1m28.366s
