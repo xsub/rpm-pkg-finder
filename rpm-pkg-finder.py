@@ -8,9 +8,12 @@ import sqlite3
 import sys
 
 # Function to query the package database by package name
-def query_package(package_name, conn):
+def query_package(package_name, conn, exact_match):
     matched_packages = []
-    pattern = re.compile('.*{}.*'.format(package_name))
+    if exact_match:
+        pattern = re.compile(r'\b{}\b'.format(package_name))
+    else:
+        pattern = re.compile('.*{}.*'.format(package_name))
 
     cursor = conn.execute("SELECT * FROM packages ORDER BY name")
     for row in cursor.fetchall():
@@ -23,7 +26,6 @@ def query_package(package_name, conn):
 def print_results(results, format_option):
     for package in results:
         if format_option == "-1":
-            #print(f'{package[0]} - {package[1]} - {package[2]}')
             formatted_string = "{:<{width}} - {:<{width2}} - {}".format(package[2], package[1], package[0], width=20, width2=40)
             print(formatted_string)
         elif format_option == "-I" or format_option == "-i":
@@ -48,17 +50,19 @@ if __name__ == "__main__":
     parser.add_argument("-1", dest="format_option", action="store_const", const="-1", help="Format output as one record per line")
     parser.add_argument("-I", dest="format_option", action="store_const", const="-I", help="Format output as dnf install command")
     parser.add_argument("-i", dest="format_option", action="store_const", const="-i", help="Format output as dnf info command")
+    parser.add_argument("-e", "--exact-match", action="store_true", help="Perform an exact match without wildcards")
 
     args = parser.parse_args()
     pattern = args.pattern
     format_option = args.format_option
+    exact_match = args.exact_match
 
     # Open the SQLite connection
     conn = sqlite3.connect('package_db.sqlite')
 
     try:
         # Query the package database by pattern
-        results = query_package(pattern, conn)
+        results = query_package(pattern, conn, exact_match)
 
         # Print the results in the specified format
         print_results(results, format_option)
