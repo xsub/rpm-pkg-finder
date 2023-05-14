@@ -29,6 +29,24 @@ sudo dnf --enablerepo=epel-debuginfo install htop-debuginfo.x86_64
 sudo dnf --enablerepo=epel-debuginfo install htop-debugsource.x86_64
 sudo dnf --enablerepo=epel-source install htop.src
 sudo dnf install htop.x86_64
+
+# --exact-match or -e: match exact token (no substring matching)
+➜  rpm-pkg-finder git:(main) ./rpm-pkg-finder.py -e mc    
+Package Name: mc-debuginfo.x86_64
+Version: 1:4.8.26-5.el9
+Repository Name: appstream-debug
+
+Package Name: mc-debugsource.x86_64
+Version: 1:4.8.26-5.el9
+Repository Name: appstream-debug
+
+Package Name: mc.src
+Version: 1:4.8.26-5.el9
+Repository Name: appstream-source
+
+Package Name: mc.x86_64
+Version: 1:4.8.26-5.el9
+Repository Name: appstream
 ```
 
 #### Example (database building):
