@@ -27,7 +27,7 @@ def query_package(package_name, conn, exact_match):
 def print_results(results, format_option):
     for package in results:
         if format_option == "-1":
-            formatted_string = "{:<{width}} - {:<{width2}} - {}".format(package[2], package[1], package[0], width=20, width2=40)
+            formatted_string = "{:<{width}} - {:<{width2}} - {}".format(package[2], package[1], package[0], width=25, width2=40)
             print(formatted_string)
         elif format_option == "-I" or format_option == "-i":
             repo_name = package[2]
