@@ -53,7 +53,7 @@ def query_repo_build_db(repo_name, conn):
             repo_name = package[2]
             conn.execute("INSERT OR IGNORE INTO packages (name, version, repo_name) VALUES (?, ?, ?)", (package_name, version, repo_name))
         conn.commit()
-        print(f"➡️  indexed {len(packages)} packages.")
+        print(f"➡️ indexed {len(packages)} packages.")
     else:
         print(result.stderr)
     return(len(packages))
@@ -81,7 +81,7 @@ try:
     total_pkgs = 0;
     # Iterate over the generator and query each repository
     for index, (file, repo_name) in enumerate(grep_repos_names(pattern, path), start=1):
-        print(f"repo id: {index}/{num_repo_files} | repo file: {file} | repo name: {repo_name}", end=" ", flush=True)
+        print(f"repo id: {index}/{num_repo_files} | file: {file} | name: {repo_name}", end=" ", flush=True)
         indexed_pkgs = query_repo_build_db(repo_name, conn)
         total_pkgs += indexed_pkgs
     print(f"Total packages: {total_pkgs}.")
