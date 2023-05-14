@@ -99,13 +99,11 @@ sys	0m6.713s
 ```
 
 -----
-
-_Evangelism warning!_<br>
-
+Warning! Linux Evangelism!
 -----
 
 [Go AlmaLinux!](https://almalinux.org) <br>
-> ![AlmaLinuxPin](https://github.com/xsub/rpm-pkg-finder/assets/426035/d36feb1d-86f8-4308-9149-9fdb76cc4f9c)
+![AlmaLinuxPin](https://github.com/xsub/rpm-pkg-finder/assets/426035/d36feb1d-86f8-4308-9149-9fdb76cc4f9c)
 
 
 
