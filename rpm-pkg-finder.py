@@ -3,6 +3,7 @@
 # github.com/xsub/rpm-pkg-finder
 # 2023 psuchanecki@almalinux.org
 import argparse
+import os
 import re
 import sqlite3
 import sys
@@ -45,17 +46,22 @@ def print_results(results, format_option):
 
 # Example usage: python3 query_package.py PATTERN
 if __name__ == "__main__":
+    # Args args args!
     parser = argparse.ArgumentParser(description="Query package database.")
     parser.add_argument("pattern", help="Pattern to match against package names")
     parser.add_argument("-1", dest="format_option", action="store_const", const="-1", help="Format output as one record per line")
     parser.add_argument("-I", dest="format_option", action="store_const", const="-I", help="Format output as dnf install command")
     parser.add_argument("-i", dest="format_option", action="store_const", const="-i", help="Format output as dnf info command")
     parser.add_argument("-e", "--exact-match", action="store_true", help="Perform an exact match without wildcards")
-
     args = parser.parse_args()
     pattern = args.pattern
     format_option = args.format_option
     exact_match = args.exact_match
+
+    # Check if package_db.sqlite exists
+    if not os.path.exists("package_db.sqlite"):
+        print("Package database does not exist. Please run rpm-pkg-db-builder.py first.")
+        sys.exit(1)
 
     # Open the SQLite connection
     conn = sqlite3.connect('package_db.sqlite')
