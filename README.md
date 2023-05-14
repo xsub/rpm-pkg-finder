@@ -99,7 +99,7 @@ sys	0m6.713s
 ```
 
 -----
-Warning! Linux Evangelism!
+Warning: Linux Evangelism Ahead⚠️
 -----
 
 [Go AlmaLinux!](https://almalinux.org) <br>
