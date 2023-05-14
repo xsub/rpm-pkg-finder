@@ -21,7 +21,7 @@ def grep_repos_names(pattern, path):
             for line in f:
                 match = re.search(pattern, line)
                 if match:
-                    yield match.group(0).strip("[]")
+                    yield [file, match.group(0).strip("[]")]
 
 def parse_dnf_output(output):
     lines = output.strip().split('\n')
@@ -81,8 +81,8 @@ recreate_database(conn)
 
 try:
     # Iterate over the generator and query each repository
-    for index, repo_name in enumerate(grep_repos_names(pattern, path), start=1):
-        print(f"repo id: {index}/{num_repo_files} -- name: {repo_name}")
+    for index, (file, repo_name) in enumerate(grep_repos_names(pattern, path), start=1):
+        print(f"repo id: {index}/{num_repo_files} | repo file: {file} | repo name: {repo_name}")
         query_repo(repo_name, conn)
 
 finally:
