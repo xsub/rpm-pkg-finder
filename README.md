@@ -52,6 +52,7 @@ Repository Name: appstream
 #### Example (database building):
 
 ```
+➜  rpm-pkg-finder time ./rpm-pkg-db-builder.py
 repo id: 1/40 | file: almalinux-appstream.repo | name: appstream ➡️ indexed 5344 packages.
 repo id: 2/40 | file: almalinux-appstream.repo | name: appstream-debug ➡️ indexed 4690 packages.
 repo id: 3/40 | file: almalinux-appstream.repo | name: appstream-source ➡️ indexed 1675 packages.
