@@ -51,7 +51,7 @@ def query_repo_build_db(repo_name, conn):
     if result.returncode == 0:
         # filter
         lines = result.stdout.split('\n')
-        filtered_lines = [line for line in lines if re.match('^[a-z]', f"{line.strip()}")]
+        filtered_lines = [line for line in lines if re.match('^[a-z]', line) and '@' not in line]
         packages = parse_dnf_output(filtered_lines)
         for package in packages:
             package_name = package[0]
