@@ -24,12 +24,11 @@ def grep_repos_names(pattern, path):
                 if match:
                     yield [os.path.basename(file), match.group(0).strip("[]")]
 
-def parse_dnf_output(output):
-    lines = output.strip().split('\n')
+def parse_dnf_output(output_as_lines):
     packages = []
     packages.clear()
     #i=0
-    for line in lines:
+    for line in output_as_lines:
         parts = line.split()
         if len(parts) >= 3:
             package_name = parts[0]
@@ -50,7 +49,10 @@ def query_repo_build_db(repo_name, conn):
     result = subprocess.run(command, capture_output=True, text=True)
     packages = []
     if result.returncode == 0:
-        packages = parse_dnf_output(result.stdout)
+        # filter
+        lines = result.stdout.split('\n')
+        filtered_lines = [line for line in lines if re.match('^[a-z]', f"{line.strip()}")]
+        packages = parse_dnf_output(filtered_lines)
         for package in packages:
             package_name = package[0]
             version = package[1]
