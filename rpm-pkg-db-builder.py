@@ -27,12 +27,16 @@ def grep_repos_names(pattern, path):
 def parse_dnf_output(output):
     lines = output.strip().split('\n')
     packages = []
+    packages.clear()
+    #i=0
     for line in lines:
         parts = line.split()
         if len(parts) >= 3:
             package_name = parts[0]
             version = parts[1]
             repo_name = ' '.join(parts[2:])
+            #i+=1
+            #print(f"id: {i} p: {package_name}, v: {version}, rn: {repo_name}")
             packages.append((package_name, version, repo_name))
     return packages
 
@@ -42,9 +46,9 @@ def recreate_database(conn):
     conn.execute("CREATE TABLE packages (name TEXT UNIQUE, version TEXT, repo_name TEXT)")
 
 def query_repo_build_db(repo_name, conn):
-    command = ['sudo', 'dnf', '--enablerepo=' + repo_name, 'list']
+    command = ['sudo', 'dnf', '--disablerepo=*', '--enablerepo=' + repo_name, 'list']
     result = subprocess.run(command, capture_output=True, text=True)
-    packages=()
+    packages = []
     if result.returncode == 0:
         packages = parse_dnf_output(result.stdout)
         for package in packages:
@@ -53,7 +57,7 @@ def query_repo_build_db(repo_name, conn):
             repo_name = package[2]
             conn.execute("INSERT OR IGNORE INTO packages (name, version, repo_name) VALUES (?, ?, ?)", (package_name, version, repo_name))
         conn.commit()
-        print(f"➡️ indexed {len(packages)} packages.")
+        print("➡️ indexed " + str(len(packages)) + " packages.")
     else:
         print(result.stderr)
     return(len(packages))
