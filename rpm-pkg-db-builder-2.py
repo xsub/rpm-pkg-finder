@@ -8,6 +8,7 @@ import os
 import re
 import subprocess
 import sqlite3
+import sys
 from tqdm import tqdm
 
 class Package:
@@ -110,14 +111,19 @@ if __name__ == "__main__":
             total_pkgs += indexed_pkgs
         print(f"Total packages: {total_pkgs}.")
 
-
         if args.generate_descriptions:
             print("Generating package descriptions...")
             cursor = conn.execute("SELECT * FROM packages ORDER BY name")
             rows = cursor.fetchall()
-            for row in tqdm(rows, desc="Processing descriptions"):
-                package_name = row[0]
-                add_description_to_package(package_name, conn_desc)
+            with tqdm(total=len(rows), desc="Processing descriptions", ncols=115) as pbar:
+                for row in rows:
+                    try:
+                        package_name = row[0]
+                        add_description_to_package(package_name, conn_desc)
+                        pbar.update()
+                    except KeyboardInterrupt:
+                        print("\nInterrupted by user during the description generation. Exiting...")
+                        sys.exit(0)
 
     finally:
         conn.execute("PRAGMA foreign_keys = OFF")
